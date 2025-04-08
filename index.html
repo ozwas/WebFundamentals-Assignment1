@@ -6,11 +6,12 @@
   <title>Responsive Feature Page</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body id="top">
-  <header>
-    <h1>My Web Portfolio</h1>
-    <p>Welcome to my first website.</p>
+<body>
+  <button class="scroll-up">
+    <i class="arrow-up"></i>
+  </button>
 
+  <header class="header">
     <nav>
       <a href="index.html" class="logo">HomePage</a>
       <ul class="nav-links">
@@ -21,57 +22,82 @@
       </ul>
     </nav>
   </header>
-
-  <section id="hero" class="hero">
-    <h1>About Me</h1>
-    <p>My name is Oza-Kine Wong Ah Sui and I am a student at </p>
+  
+  <section class="hero">
+    <div class="animated-bg"></div>
+    <div class="hero-content">
+        <div>
+            <h1 class="hero-headings">Welcome to the Future</h1>
+            <p class="hero-headings">Discover innovative solutions that transform the way you interact with technology. Elevate your digital experience with our cutting-edge platform.</p>
+            <div class="hero-button-container">
+              <a href="#about" class="hero-button">About Me</a>
+              <a href="#projects" class="hero-button">My Projects</a>
+              <a href="#contact" class="hero-button">Contact Us</a>
+            </div>
+        </div>
+    </div>
   </section>
 
   <main>
-    <a href="#about" class="scroll-down">About Me</a>
-    <a href="#projects" class="scroll-down">My Projects</a>
-    <a href="#contact" class="scroll-down">Contact Us</a>
-
     <section id="about" class="about">
-      <h1>About Me</h1>
-      <p>Discover how modern CSS can transform your web design.
-        - Your name and title
-        - A brief bio
-        - Skills section
-      </p>
+      <div class="introduction">
+        <h1>About Me</h1>
+        <p>My name is Oza-Kine Wong Ah Sui and I am currently a Business Information Systems 
+        student at <a href="https://curtinmauritius.ac.mu/">Curtin Mauritius</a>. 
+        </p>
+      </div>
+      <div class="about-container">
+        <div class="about-column">
+          <h2>Skills</h2>
+          <ul>
+            <li><img src="https://cdn-icons-png.freepik.com/256/9419/9419461.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Project Management Icon" class="item-icon">Project Management</li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/8123/8123689.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Time Management Icon" class="item-icon">Time Management</li>
+            <li><img src="https://cdn-icons-png.freepik.com/128/7095/7095973.png" alt="Critical Thinking Icon" class="item-icon">Critical Thinking</li>
+          </ul>
+        </div>
+        
+        <div class="about-column">
+          <h2>Interests</h2>
+          <ul>
+            <li><img src="https://cdn-icons-png.freepik.com/256/1447/1447166.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Muffin Icon" class="item-icon">Baking<img src="https://cdn-icons-png.freepik.com/256/2917/2917633.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Baking Icon" class="item-icon"></li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/4134/4134452.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Japanese Sakura Drink Icon" class="item-icon">Learning Japanese<img src="https://cdn-icons-png.freepik.com/256/2755/2755509.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Learning Japanese Icon" class="item-icon"></li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/4999/4999076.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Watching Movie with popcorn and drink Icon" class="item-icon">Movies<img src="https://cdn-icons-png.freepik.com/256/7727/7727545.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Movie Clapperboard Icon" class="item-icon"></li>
+          </ul>
+        </div>
+      </div>
     </section>
-  
+
+    <hr class="rounded">
     <section id="projects" class="Projects">
       <h2>My Projects</h2>
       <div class="grid-container">
         <div class="grid-item">
-          <h3>Week 2: Basic Webpage</h3>
+          <h3><a href="week2.html">Week 2: Basic Webpage</a></h3>
           <p>Learn how to build layouts that adapt seamlessly to any device.</p>
         </div>
         <div class="grid-item">
-          <h3>Week 3: Rock Paper Scissors Game</h3>
+          <h3><a href="week3.html">Week 3: Rock Paper Scissors Game</a></h3>
           <p>Build a navigation bar that reflows gracefully on smaller screens.</p>
         </div>
         <div class="grid-item">
-          <h3>Week 4: Flatland Business Advisor</h3>
+          <h3><a href="week4.html">Week 4: Flatland Business Advisor</a></h3>
           <p>Organise your content using powerful grid-based designs.</p>
         </div>
         <div class="grid-item">
-          <h3>Week 5: RSS Reader</h3>
+          <h3><a href="week3.html">Week 5: RSS Reader</a></h3>
           <p>Organise your content using powerful grid-based designs.</p>
         </div>
       </div>
     </section>
+    <hr class="rounded">
     <section id="contact" class="contact">
       <h2>Contact Us</h2>
       <p>For more information, please contact <a href="mailto:oza-kine.wongahsui@student.curtin.edu.au">oza-kine.wongahsui@student.curtin.edu.au</a>.</p>
     </section>
-
-    <a href="#top" class="scroll-up" id="scrollUpBtn">&#8593;</a>
-
   </main>
   <footer>
     <p>&copy; 2025 Oza-Kine Wong Ah Sui</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
