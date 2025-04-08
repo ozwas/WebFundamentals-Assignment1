@@ -1,164 +1,302 @@
 /* General styles */
 body {
-    background: radial-gradient(circle, #a9cef3, #c9cbe7);
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Heading styles */
-  h1, h2, h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #1c3769;
-    margin-bottom: 0.5em;
-  }
-  
-  /* Paragraph styles */
-  p {
-    text-align: center;
-    color: #1c3769;
-    line-height: 1.6;
-    margin: 0 0 1em;
-  }
-  
-  /* Link styles */
-  a {
-    color: #3b3bca;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-
-/* Base styles */
-body {
+  background: radial-gradient(circle, #a9cef3, #c9cbe7);
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
   line-height: 1.6;
   color: #000000;
 }
-  
-  /* Navigation using Flexbox */
+
+/* Heading styles */
+h1, h2, h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1c3769;
+  margin-bottom: 0.5em;
+}
+
+/* Paragraph styles */
+p {
+  text-align: center;
+  color: #1c3769;
+  line-height: 1.6;
+  margin: 0 0 1em;
+}
+
+/* Link styles */
+a {
+  color: #41718b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation using Flexbox */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+/*Animation of changing gradient */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #8881e3, #eb9452, #ea95d7, #eb9452);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+/* Style and transition of headers */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+}
+
+.hero-headings {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards 1s;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Buttons to access different sections of the homepage */
+.button-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; 
+  margin-top: 2rem;
+}
+
+.hero-button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 3s;
+}
+
+.hero-button:hover {
+  color: #333;
+}
+
+/* About section */
+.introduction {
+  background-color: #ffffff);
+  padding: 1.2rem;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.about-column {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.about-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-column li {
+  margin-bottom: 8px;
+}
+
+/* Images placed next to each listed item */
+.item-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 10px solid #ffffff;
+  border-radius: 1px;
+}
+
+/* Projects section using CSS Grid */
+.projects {
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.grid-item {
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+}
+
+/* Contact section */
+.contact {
+  padding: 1rem;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+}
+
+/* Scroll up button*/
+.scroll-up {
+  all: unset;
+  position: fixed;
+  bottom: 25px;
+  right: 30px;
+  height: 45px;
+  width: 45px;
+  background-color: #080808;
+  border-radius: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.scroll-up .arrow-up {
+  width: 14px;
+  height: 14px;
+  border-left: 2px solid #f9f9f9;
+  border-bottom: 2px solid#f9f9f9;
+  transform: rotate(135deg);
+  margin-bottom: -7px;
+  pointer-events: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
   nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: centre;
-    padding: 1rem;
-    background-color: #000000;
+    flex-direction: column;
   }
-  
   .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    width: 100%;
   }
-  
   .nav-links li {
-    margin-left: 1rem;
+    margin: 0.5rem 0;
   }
-  
-  .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  .logo {
-    color: #ffffff;
-    text-decoration: none;
-  }
-
-  .nav-links a:hover {
-      text-decoration: underline;
-  }
-  
-  /* Hero section */
-  .hero {
-    text-align: center;
-    padding: 2rem;
-    background-color: #e0e0e0;
-  }
-  
-  .hero h1 {
-    margin-bottom: 0.5rem;
-  }
-  
-  /* About section */
-  .about-column {
-    text-align: center;
-  }
-
-  /* Rounded border */
-  hr.rounded {
-    border-top: 2px solid #d6e8f4;
-    border-radius: 1px;
-  }
-
-  /* Projects section using CSS Grid */
-  .projects {
-    padding: 2rem;
-    background-color: #f4f4f4;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .grid-item {
-    background-color: #ffffff;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  /* Contact section */
-  .contact {
-    padding: 2rem;
-  }
-  
-  /* Footer styles */
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #ffffff;
-    color: #ffffff;
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-    }
-    .nav-links {
-      flex-direction: column;
-      width: 100%;
-    }
-    .nav-links li {
-      margin: 0.5rem 0;
-    }
-  }
-
   .about-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
   }
-
   .about-column {
-    width: 48%;
+    margin-bottom: 1.5rem;
+    width: auto; /* Override fixed width for mobile */
   }
-
-  .about-column ul {
-    list-style-type: none;
-    padding: 0;
+  .hero-headings {
+    font-size: 1rem;
   }
-
-  .about-column li {
-    margin-bottom: 8px;
-  }
+}
