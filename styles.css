@@ -1,0 +1,164 @@
+/* General styles */
+body {
+    background: radial-gradient(circle, #a9cef3, #c9cbe7);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Heading styles */
+  h1, h2, h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1c3769;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Paragraph styles */
+  p {
+    text-align: center;
+    color: #1c3769;
+    line-height: 1.6;
+    margin: 0 0 1em;
+  }
+  
+  /* Link styles */
+  a {
+    color: #3b3bca;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #000000;
+}
+  
+  /* Navigation using Flexbox */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: centre;
+    padding: 1rem;
+    background-color: #000000;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin-left: 1rem;
+  }
+  
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .logo {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Hero section */
+  .hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #e0e0e0;
+  }
+  
+  .hero h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* About section */
+  .about-column {
+    text-align: center;
+  }
+
+  /* Rounded border */
+  hr.rounded {
+    border-top: 2px solid #d6e8f4;
+    border-radius: 1px;
+  }
+
+  /* Projects section using CSS Grid */
+  .projects {
+    padding: 2rem;
+    background-color: #f4f4f4;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .grid-item {
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  /* Contact section */
+  .contact {
+    padding: 2rem;
+  }
+  
+  /* Footer styles */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: #ffffff;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+    }
+    .nav-links li {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .about-column {
+    width: 48%;
+  }
+
+  .about-column ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .about-column li {
+    margin-bottom: 8px;
+  }
