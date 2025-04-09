@@ -131,7 +131,7 @@ nav {
   }
 }
 
-/* Buttons to access different sections of the homepage */
+/* Style of buttons to access different sections of the homepage */
 .button-container {
   display: flex;
   gap: 20px;
@@ -160,7 +160,7 @@ nav {
   color: #333;
 }
 
-/* About section */
+/* Style of About me section */
 .introduction {
   background-color: #ffffff;
   padding: 1.2rem;
@@ -195,7 +195,7 @@ nav {
   margin-bottom: 8px;
 }
 
-/* Images placed next to each listed item */
+/* Images placed next to each listed item - style of images */
 .item-icon {
   width: 24px;
   height: 24px;
@@ -205,13 +205,13 @@ nav {
   vertical-align: middle;
 }
 
-/* Rounded border */
+/* Style of Rounded border/webpage break */
 hr.rounded {
   border-top: 10px solid #ffffff;
   border-radius: 1px;
 }
 
-/* Projects section using CSS Grid */
+/* Style of Projects section using CSS Grid */
 .projects {
   padding: 2rem;
   background-color: #f4f4f4;
@@ -239,7 +239,7 @@ hr.rounded {
   transform: scale(1.02);
 }
 
-/* Contact section */
+/* Style of Contact section */
 .contact {
   padding: 1rem;
 }
@@ -251,7 +251,7 @@ footer {
   background-color: #ffffff;
 }
 
-/* Scroll up button*/
+/* Scroll up button Styles */
 .scroll-up {
   all: unset;
   position: fixed;
@@ -277,7 +277,7 @@ footer {
   pointer-events: none;
 }
 
-/* HTML 2 / BASIC WEBPAGE - Hero section */
+/* HTML 2 / BASIC WEBPAGE - Style of Hero section  different from in homepage */
 .hero2 {
   position: relative;
   height: 50vh;
@@ -297,7 +297,7 @@ footer {
   animation: fadeIn 1s ease forwards 1s;
 }
 
-/* Navigation using Flexbox with buttons to access different sections of the webpage */
+/* Style of Navigation using Flexbox with buttons to access different sections of the webpage */
 .subnav-button-container {
   display: flex;
   gap: 15px;
@@ -330,7 +330,7 @@ footer {
   color: #000000;
 }
 
-/* HTML 3 / ROCK PAPER SCISSORS */
+/* HTML 3 / ROCK PAPER SCISSORS - style of container in which the game is and instruction/rule link */
 .rock-container {
   margin: 0 auto;
   margin-top: 10%;
@@ -367,7 +367,7 @@ footer {
   background-color: gray;
 }
 
-/*CSS styling for Scoreboard */
+/* Style for Scoreboard */
 .scoreboard-container {
   margin: 0 auto;
   margin-top: -9%;
@@ -385,7 +385,7 @@ footer {
   font-weight: bold;
 }
 
-/*Reset Button styling */
+/* Style for game reset button */
 button {
   padding: 10px 20px;
   font-size: 1em;
@@ -399,6 +399,39 @@ button {
 
 button:hover {
   background-color: #62ade6;
+}
+
+/*Style for falling confetti when the user wins */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: gold;
+  opacity: 1;
+  transform: rotate(45deg);
+  animation: fallToBottom 3s linear forwards;
+}
+
+@keyframes fallToBottom {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(90vh) rotate(360deg);
+    opacity: 1;
+  }
 }
 
 /* Media Queries for Responsiveness */
