@@ -367,6 +367,40 @@ footer {
   background-color: gray;
 }
 
+/*CSS styling for Scoreboard */
+.scoreboard-container {
+  margin: 0 auto;
+  margin-top: -9%;
+  margin-bottom: 5%;
+  text-align: center;
+  font-size: 1rem;
+  width: 20%;
+  padding: 1rem;
+  background-color: #bce5f1;
+  border: 5px solid #c494c5;
+  border-radius: 20px;
+}
+
+#wins, #losses, #ties {
+  font-weight: bold;
+}
+
+/*Reset Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #4c77af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+}
+
+button:hover {
+  background-color: #62ade6;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   nav {
