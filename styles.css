@@ -1,6 +1,6 @@
 /* General styles */
 body {
-  background: radial-gradient(circle, #a9cef3, #c9cbe7);
+  background: radial-gradient(circle, #a9cef3, #aaaeed);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -48,6 +48,7 @@ nav {
   list-style: none;
   display: flex;
   margin: 0;
+  gap: 2rem;
   padding: 0;
 }
 
@@ -333,15 +334,15 @@ footer {
 /* WEEK 3 / ROCK PAPER SCISSORS - style of container in which the game is and instruction/rule link */
 .rock-container {
   margin: 0 auto;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 7%;
+  margin-bottom: 15%;
   padding: 20px;
-  border: 10px solid rgb(50, 100, 117);
   width: 50%;
   font-family: Helvetica, sans-serif;
   justify-items: center;
   text-align: center;
   background-color: #a9d9f3;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .instruction {
@@ -361,16 +362,17 @@ footer {
   border-radius: 50%;
   font-size: 65px;
   cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .circle:hover {
-  background-color: gray;
+  background-color: rgb(56, 116, 199);
 }
 
 /* Style for Scoreboard */
 .scoreboard-container {
   margin: 0 auto;
-  margin-top: -9%;
+  margin-top: -12%;
   margin-bottom: 5%;
   text-align: center;
   font-size: 1rem;
@@ -379,6 +381,8 @@ footer {
   background-color: #bce5f1;
   border: 5px solid #c494c5;
   border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
 }
 
 #wins, #losses, #ties {
@@ -437,40 +441,118 @@ button:hover {
 /*WEEK 4 / Flatland Business Advisor */
 
 
-/* WEEK 5 / RSS Reader - style for data */
-#data {
-  margin-top: 20px;
-  background: #fff;
+/* WEEK 5 / RSS Reader - style for content */
+#content {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  background-color: #fff;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 50px rgba(0,0,0,0.1);
 }
 
 /*style for error message */
-.error-message {
-  display: none;
-  color: red;
+.error {
+  background-color: #f2cfcc;
+  color: #dc2e1b;
   margin-top: 1rem;
   padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 3rem;
+  border-left: 5px solid #fae5e2
 }
 
-/* style for article titles and summaries */
-article {
-  border-bottom: 3px solid #ebe7e7;
-  padding: 10px 0;
-  margin-bottom: 10px;
-  justify-items: left;
+/* style for article, article titles and their containers and links */
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
-article h3 {
+
+.feed-article {
+  border-bottom: 3px solid #ebe7e7;
+  padding: 15px 0;
+  margin-bottom: 10px;
+}
+
+.article-title {
   margin: 0;
   color: #333;
-  justify-items: left;
+  justify-content: left;
+  margin-top: -2rem;
 }
-article p {
-  margin: 5px 0 0;
-  font-size: 0.9em;
+
+.article-title a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.article-title a:hover {
+  color: #3498db;
+}
+
+/* style for article metadata (date and author name) */
+.article-meta {
+  font-size: 0.85em;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+/* style for article content description/summary */
+.article-summary {
+  margin: 10px 0;
+  font-size: 0.95em;
   color: #242020;
-  text-align: left;
+  line-height: 1.5;
+}
+
+/* style for the read full article/read more link */
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #3498db;
+  font-size: 0.9em;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.read-more:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* style for the feed selector / menu dropdown to select RSS feed */
+.selector-container {
+  margin-left: 1.5rem;
+}
+#feed-selector {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 235px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#feed-selector:disabled {
+  background-color: #f39f9f;
+  cursor: not-allowed;
+}
+
+/* style for loading */
+#content p:first-child:only-child {
+  text-align: center;
+  padding: 20px;
+  color: #7f8c8d;
 }
 
 /* Media Queries for Responsiveness */
