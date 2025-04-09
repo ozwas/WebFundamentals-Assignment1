@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basic API Fetcher</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"> <!--link to stylesheet-->
 </head>
 <body>
-  <button class="scroll-up">
+  <button class="scroll-up"> <!--scroll up button-->
     <i class="arrow-up"></i>
   </button>
 
   <header class="header">
-    <nav>
+    <nav> <!--navigation bar with links to other webpages-->
       <a href="index.html" class="logo">HomePage</a>
       <ul class="nav-links">
         <li><a href="week2.html">Week 2</a></li>
@@ -23,26 +23,22 @@
     </nav>
   </header>
   <main>
-    <h1>My First API Fetcher</h1>
-    <p>Open your browser's console to see the fetched data.</p>
-    <section>
-      <h1>Multi-Feed RSS Dashboard</h1>
-      <!-- Feed Selector -->
-      <label for="feed-selector">Choose a feed:</label>
-      <select id="feed-selector">
+    <h1>Multi-Feed RSS Dashboard</h1> <!--main header/title of webpage-->
+    <p>Stay up-to-date with current world affairs through the latest articles of BBC News and New York Times. </p>
+    <!-- Feed Selector section and container-->
+     <div class="selector-container">
+       <label for="feed-selector">Choose a feed:</label>
+       <select id="feed-selector"> <!--creates a dropdown menu with two feeds to choose from-->
         <option value="https://feeds.bbci.co.uk/news/world/rss.xml">BBC World News</option>
         <option value="https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml">New York Times World News</option>
-      </select>
-       <!-- Container for displaying data -->
-       <div id="data"></div>
-       <!-- Container for RSS feed content -->
-       <div id="content"></div>
-    </section>
-    <div id="error-message" ></div> 
+       </select>
+     </div>
+     <!-- Container for RSS feed content -->
+     <div id="content"></div>
   </main>
   <footer>
    <p>&copy; 2025 Oza-Kine Wong Ah Sui</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js"></script> <!--link to script-->
 </body>
 </html>
