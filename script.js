@@ -86,3 +86,135 @@ function launchConfetti() {    /*function to launch confetti */
         }, 4000); 
     }
 }
+
+/* Flatland */
+
+/*RSS Reader */
+/* Cache to store previously fetched feeds */
+const feedCache = {};
+
+/* all configurations */
+const config = {
+  apiEndpoint: 'https://api.rss2json.com/v1/api.json',
+  cacheExpiry: 5 * 60 * 1000, // 5 minutes in milliseconds
+  maxRetries: 2,
+  retryDelay: 1000 // 1 second
+};
+/*function to load content from feed */
+function loadFeed(feedUrl, retryCount = 0) {
+    const contentDiv = document.getElementById('content');
+    const feedSelector = document.getElementById('feed-selector');
+    
+    /* Show loading state */
+    contentDiv.innerHTML = '<p>Loading feed...</p>';
+    feedSelector.disabled = true;
+    
+    /* Checks cache first */
+    if (feedCache[feedUrl] && (Date.now() - feedCache[feedUrl].timestamp) < config.cacheExpiry) {
+      displayArticles(feedCache[feedUrl].data);
+      feedSelector.disabled = false;
+      return;
+    }
+    
+    /* Constructs API URL */
+    const apiUrl = `${config.apiEndpoint}?rss_url=${encodeURIComponent(feedUrl)}`;
+
+    fetch(apiUrl) /* fetches RSS feed data from API, then parsed and analysed into JSON data */
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        feedCache[feedUrl] = {
+          data: data.items,
+          timestamp: Date.now()
+        };
+        
+        /* Displays the articles */
+        displayArticles(data.items);
+      })
+      .catch(error => {
+        console.error('Error fetching the feed:', error);
+        
+        /* condition statements to retry connection */
+        if (retryCount < config.maxRetries) {
+          contentDiv.innerHTML = `<p>Connection issue. Retrying (${retryCount + 1}/${config.maxRetries})...</p>`;
+          setTimeout(() => loadFeed(feedUrl, retryCount + 1), config.retryDelay);
+        } else {
+          /* defines and shows error message based on error type determined through conditional statements */
+          let errorMessage = 'Unable to load the feed. Please try again later.';
+          
+          if (error.message.includes('HTTP error')) {
+            errorMessage = 'The feed server returned an error. Please try a different feed or try again later.';
+          } else if (error.message.includes('NetworkError')) {
+            errorMessage = 'Network connection issue. Please check your internet connection.';
+          }
+          
+          contentDiv.innerHTML = `<p class="error">${errorMessage}</p>`;
+        }
+      })
+      .finally(() => {
+        feedSelector.disabled = false;
+      });
+  }
+  
+function displayArticles(articles) {
+  const contentDiv = document.getElementById('content');
+  contentDiv.innerHTML = ''; 
+    
+  if (!articles || articles.length === 0) { /* condition statement to check if there are no articles in feed, then send message */
+    contentDiv.innerHTML = '<p>No articles found in this feed.</p>';
+    return;
+  }
+    
+    /* Creates a container for all of the articles */
+    const articlesContainer = document.createElement('div');
+    articlesContainer.className = 'articles-container';
+    
+    articles.forEach(article => { /* Creates article element */
+        const articleEl = document.createElement('article');
+        articleEl.className = 'feed-article';
+      
+      /* Formats publication date - if available */
+      const pubDate = article.pubDate ? new Date(article.pubDate) : null;
+      const dateString = pubDate ? pubDate.toLocaleDateString() : 'Unknown date';
+      
+      /* Gets a description, if no content, uses string */
+      const description = article.description || article.content || 'No description available';
+      
+      /* Creates  article HTML structure - title, additional data like date and author, and link to read full article */
+      articleEl.innerHTML = `
+        <h3 class="article-title">
+          <a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a>
+        </h3>
+        <div class="article-meta">
+          <span class="article-date">${dateString}</span>
+          ${article.author ? `<span class="article-author">by ${article.author}</span>` : ''}
+        </div>
+        <div class="article-summary">${description}</div> 
+        <a href="${article.link}" class="read-more" target="_blank" rel="noopener noreferrer">Read full article</a>
+      `;
+      
+      articlesContainer.appendChild(articleEl);
+    });
+    
+    contentDiv.appendChild(articlesContainer);
+  }
+  
+  /* Initializes RSS feed reader application */
+  function initFeedReader() {
+    const feedSelector = document.getElementById('feed-selector');
+    
+    /* Event listener for feed selector - activates each time a different option is selected*/
+    feedSelector.addEventListener('change', function() {
+      loadFeed(this.value); /* calls loadfeed function when triggered */
+    });
+    
+    /* loads the default feed in the html */
+    loadFeed(feedSelector.value);
+  }
+  
+  /* ensures that application starts only when the DOM is fully loaded */
+  document.addEventListener('DOMContentLoaded', initFeedReader);
