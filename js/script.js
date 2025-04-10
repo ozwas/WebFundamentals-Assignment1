@@ -93,55 +93,95 @@ function launchConfetti() {  /*function to launch confetti */
 }
 
 /* Flatland */
-document.addEventListener("DOMContentLoaded", function() { /*makes sure that the application starts only when DOM is fully loaded */
+function showGreetingThenBuzz(wordsElement) {
+  /* shows greeting */
+  wordsElement.innerHTML = "Welcome to Flatland.<br>I am Square.";
+  /*greeting disappears after a short time and the buzzword generator is set up after */
+  setTimeout(() => {
+    wordsElement.innerHTML = '';
+    /* each time the user clicks on the square, a new buzzword phrase is shown */
+    const square = document.getElementById('square');
+    if (square) {
+      square.addEventListener('click', () => {
+        const phrase = createBuzzwordPhrase();
+        wordsElement.innerHTML = phrase;
+      });
+    }
+  }, 2000); /*2s - duration of greeting being displayed on screen */
+}
+
+/* individual functions called in step 3 flatland, defined in html */
+function makeRed() {
   const square = document.getElementById("square");
-  const words = document.getElementById("words");
-  
-  if (square && words) { /*checks if elements exists in html */
-    /* Initial greeting message */
-    words.innerHTML = "Welcome to Flatland.<br> I am Square.";
-    let isStyled = false;
-    
-    /* Removes any inline onclick attribute */
-    square.removeAttribute("onclick");
-    
-    /* Adds click event listener to change the square style updates the screen with the buzzword phrase */
-    square.addEventListener("click", function() {
-      if (isStyled) {
-        /* Resets square to its original style */
-        square.style.backgroundColor = '#8174FA';
-        square.style.border = 'none';
-        square.style.borderRadius = '0';
-        square.style.boxShadow = 'none';
-      } else {
-        /* Applies new style to square */
-        square.style.backgroundColor = '#C3F2E7';
-        square.style.borderRadius = '10%';
-        square.style.boxShadow = '0 2px 50px rgba(0,0,0,0.1)';
-      }
-      
-      // Toggle the state
-      isStyled = !isStyled;
-      
-      // Update the words
-      words.innerHTML = createBuzzwordPhrase();
-    });
+  square.style.backgroundColor = 'red';
+}
+function makeGreen() {
+  const square = document.getElementById("square");
+  square.style.backgroundColor = 'green';
+}
+function makeGray() {
+  const square = document.getElementById("square");
+  square.style.backgroundColor = 'gray';
+}
+/* parameterised function used in step 4, to change square's colour when given a value/colour */ 
+function changeColor(color) {
+  const square = document.getElementById("square");
+  square.style.backgroundColor = color;
+}
+/*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
+document.addEventListener("DOMContentLoaded", () => {
+  const square = document.getElementById("square");
+  if (square) {
+    square.addEventListener('dblclick', () => changeColour('red'));
+    square.addEventListener('mouseover', () => changeColour('green'));
+    square.addEventListener('mouseout', () => changeColour('gray'));
+    square.addEventListener('click', () => changeColor('#8174FA'));
   }
 });
 
-/* function to create a buzz word phrase by randomizing the buzz, action and outcome words and providing a specific structure for the words to be returned in order */
-function createBuzzwordPhrase() {
-let buzz = ["Paradigm-changing", "Multi-tier", "10,000-foot", "Agile", "Customer", "Win-win"];
-let action = ["empowered", "value-added", "synergy", "creative", "oriented", "focused", "aligned"];
-let outcome = ["process", "deliverable", "solution", "tipping-point", "strategy", "vision"];
-
-let idx_buz = Math.floor(Math.random() * buzz.length);
-let idx_act = Math.floor(Math.random() * action.length);
-let idx_out = Math.floor(Math.random() * outcome.length);
-
-return buzz[idx_buz] + " " + action[idx_act] + " " + outcome[idx_out];
+/*function changeColor is defined */
+function changeColour(colour) {
+    square.style.backgroundColor = colour;
 }
+/* updates DOM content dynamically, delaying javascript until styles load */
+window.onload = function () {
+  const page = window.location.pathname;
+  const square = document.getElementById('square');
+  const words = document.getElementById('words');
 
+  if (square && words) {
+    if ( /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
+      page.includes("/flatland/flatland8.html") || page.includes("week4.html")) {
+      showGreetingThenBuzz(words); 
+    } else if (page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html")) {
+      /* for flatland 6 and 7 only the greeting is displayed */
+      words.innerHTML = "Welcome to Flatland.<br>I am Square.";
+    }
+
+    /* color event listeners for interaction with square shape - changing colors depending on actions */
+    if (
+      page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
+      {
+      square.addEventListener('dblclick', () => changeColour('red'));
+      square.addEventListener('mouseover', () => changeColour('green'));
+      square.addEventListener('mouseout', () => changeColour('gray'));
+      square.addEventListener('click', () => changeColor('#8174FA'));
+    }
+  }
+};
+/* randomly generates a buzzword phrase */
+function createBuzzwordPhrase() {
+  /* See https://en.wikipedia.org/wiki/List_of_buzzwords */
+  let buzz = ["Paradigm-changing", "Multi-tier", "10,000-foot", "Agile", "Customer", "Win-win"];
+  let action = ["empowered", "value-added", "synergy", "creative", "oriented", "focused", "aligned"];
+  let outcome = ["process", "deliverable", "solution", "tipping-point", "strategy", "vision"];
+
+  let idx_buz = Math.floor(Math.random() * buzz.length);
+  let idx_act = Math.floor(Math.random() * action.length);
+  let idx_out = Math.floor(Math.random() * outcome.length);
+
+  return buzz[idx_buz] + " " + action[idx_act] + " " + outcome[idx_out];
+}
 /* RSS Reader */
 /* Cache to store previously fetched feeds */
 const feedCache = {};
@@ -280,28 +320,9 @@ feedSelector.addEventListener('change', function() {
 loadFeed(feedSelector.value);
 }
 
-/* Initialize appropriate functionality based on page content */
 document.addEventListener("DOMContentLoaded", function() {
-/* Check which page elements exist and initialize accordingly */
-if (document.getElementById("square")) {
-  // We're on the Flatland page - make sure square functionality works
-  const words = document.getElementById("words");
-  if (words) {
-    words.innerHTML = "Welcome to Flatland.<br> I am Square.";
-    
-    // Create a click function for the square to generate business phrases
-    const square = document.getElementById("square");
-    if (square) {
-      square.addEventListener("click", function() {
-        changeStyle();
-        words.innerHTML = createBuzzwordPhrase();
-      });
-    }
+  // RSS reader check
+  if (document.getElementById("feed-selector")) {
+    initFeedReader();
   }
-}
-
-// Try to initialize feed reader if we're on that page
-if (document.getElementById("feed-selector")) {
-  initFeedReader();
-}
 });
