@@ -1,10 +1,11 @@
 /* General styles */
 body {
-  background: radial-gradient(circle, #a9cef3, #aaaeed);
+  background: linear-gradient(#a3c1e3,#a3bee4,#e3f1d5);
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  height: 100%;
   color: #000000;
 }
 
@@ -331,7 +332,34 @@ footer {
   color: #000000;
 }
 
-/* WEEK 3 / ROCK PAPER SCISSORS - style of container in which the game is and instruction/rule link */
+/* WEEK 3 / ROCK PAPER SCISSORS */
+/* style for hero section */
+.hero3 {
+  position: relative;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  background-color: #d6d6d6;
+}
+
+/* Style and transition of headers */
+.hero-headings3 {
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards 1s;
+}
+
+/* Style of webpage break */
+.pagebreak {
+  background-color: #ffffff;
+  padding: 0.5rem;
+}
+
+/* style of container in which the game is and instruction/rule link */
 .rock-container {
   margin: 0 auto;
   margin-top: 7%;
@@ -422,24 +450,38 @@ button:hover {
   width: 10px;
   height: 10px;
   background: gold;
+  border-radius: 10%;
   opacity: 1;
   transform: rotate(45deg);
   animation: fallToBottom 3s linear forwards;
 }
 
 @keyframes fallToBottom {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(90vh) rotate(360deg);
-    opacity: 1;
+  to {
+    transform: translateY(100vh);
   }
 }
 
 /*WEEK 4 / Flatland Business Advisor */
+#words {
+  float: left;
+  width: 250px;
+  height: 200px;
+  font-size: 25px;
+  text-align: right;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 10%;
+  border-right: 5px solid red;
+}
 
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #8174FA;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 50px rgba(0,0,0,0.1);
+}
 
 /* WEEK 5 / RSS Reader - style for content */
 #content {
@@ -451,6 +493,18 @@ button:hover {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 50px rgba(0,0,0,0.1);
+}
+
+/* Style for hero section */
+.hero5 {
+  position: relative;
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  background: linear-gradient(#f8c6e1, #eac3e2, #fff0d3);
 }
 
 /*style for error message */
