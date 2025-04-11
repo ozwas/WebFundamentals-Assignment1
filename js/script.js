@@ -141,28 +141,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* updates DOM content dynamically, delaying javascript until styles load */
 window.onload = function () {
-  const page = window.location.pathname;
   const square = document.getElementById("square");
   const words = document.getElementById("words");
 
-  if (square && words) {
-    if ( /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
-      page.includes("/flatland/flatland8.html") || page.includes("week4.html")) {
-      showGreetingThenBuzz(words); 
-    } else if (page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html")) {
+    if (square && words) { /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
+    /* Gets  current page filename from URL */
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    
+    console.log("Current page:", currentPage); // Debug info
+    
+    /* Checks for week4.html or any flatland page */
+    if (currentPage === "week4.html" || 
+        currentPage === "flatland8.html") {
+      console.log("Showing greeting and buzzword"); // Debug info
+      showGreetingThenBuzz(words);
+    } 
       /* for flatland 6 and 7 only the greeting is displayed */
+    else if (currentPage === "flatland6.html" || currentPage === "flatland7.html") {
+      console.log("Showing greeting only"); // Debug info
       words.innerHTML = "Welcome to Flatland.<br>I am Square.";
     }
-
+    
     /* color event listeners for interaction with square shape - changing colors depending on actions */
-    if (
-      page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
-      {
-      square.addEventListener('dblclick', () => changeColor('red'));
-      square.addEventListener('mouseover', () => changeColor('green'));
-      square.addEventListener('mouseout', () => changeColor('gray'));
-      square.addEventListener('click', () => changeColor('#8174FA'));
-    }
+    square.addEventListener('dblclick', () => changeColor('red'));
+    square.addEventListener('mouseover', () => changeColor('green'));
+    square.addEventListener('mouseout', () => changeColor('gray'));
+    square.addEventListener('click', () => changeColor('#8174FA'));
   }
 };
 /* randomly generates a buzzword phrase */
