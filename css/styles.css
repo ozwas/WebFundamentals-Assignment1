@@ -837,3 +837,22 @@ body#body4 {
     grid-template-columns: 1fr;
   }
 }
+/* Tablet view */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+}
+
+/* Desktop view */
+@media (min-width: 1025px) {
+  body {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+}
