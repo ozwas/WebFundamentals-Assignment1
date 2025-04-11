@@ -126,8 +126,9 @@ function makeGray() {
 /* parameterised function used in step 4, to change square's color when given a value/color */ 
 function changeColor(color) {
   const square = document.getElementById("square");
-  if(square)square.style.backgroundColor = color;
+  if(square) square.style.backgroundColor = color;
 }
+
 /*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
 document.addEventListener("DOMContentLoaded", () => {
   const square = document.getElementById("square");
@@ -146,18 +147,30 @@ window.onload = function () {
   const words = document.getElementById("words");
 
   if (square && words) {
-    if ( /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
-      page.includes("/flatland/flatland8.html") || page.includes("/flatland/flatland8") || page.includes("week4") ||page.includes("week4.html")) {
-      showGreetingThenBuzz(words); 
-    } else if (page.includes("/flatland/flatland6.html") page.includes("/flatland/flatland6") || page.includes("/flatland/flatland7") || page.includes("/flatland/flatland7.html")) {
-      /* for flatland 6 and 7 only the greeting is displayed */
+    // Check for specific pages
+    const isFlatland6 = page.includes("/flatland/flatland6.html");
+    const isFlatland7 = page.includes("/flatland/flatland7.html");
+    const isFlatland8 = page.includes("/flatland/flatland8.html");
+    const isWeek4 = page.includes("week4.html");
+
+    // Show greeting on flatland6, flatland7, flatland8, and week4
+    if (isFlatland6 || isFlatland7 || isFlatland8 || isWeek4) {
       words.innerHTML = "Welcome to Flatland.<br>I am Square.";
     }
 
-    /* color event listeners for interaction with square shape - changing colors depending on actions */
-    if (
-      page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland6") || page.includes("/flatland/flatland7.html") page.includes("/flatland/flatland7") || page.includes("/flatland/flatland8") || page.includes("/flatland/flatland8.html") || page.includes("week4") || page.includes("week4.html")) 
-      {
+    // Add buzzword generator only on flatland8 and week4
+    if (isFlatland8 || isWeek4) {
+      setTimeout(() => {
+        words.innerHTML = '';
+        square.addEventListener('click', () => {
+          const phrase = createBuzzwordPhrase();
+          words.innerHTML = phrase;
+        });
+      }, 2000);
+    }
+
+    // Add color event listeners for interaction with square shape
+    if (isFlatland6 || isFlatland7 || isFlatland8 || isWeek4) {
       square.addEventListener('dblclick', () => changeColor('red'));
       square.addEventListener('mouseover', () => changeColor('green'));
       square.addEventListener('mouseout', () => changeColor('gray'));
@@ -165,6 +178,7 @@ window.onload = function () {
     }
   }
 };
+
 /* randomly generates a buzzword phrase */
 function createBuzzwordPhrase() {
   /* See https://en.wikipedia.org/wiki/List_of_buzzwords */
