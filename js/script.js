@@ -126,19 +126,23 @@ function makeGray() {
 /* parameterised function used in step 4, to change square's color when given a value/color */ 
 function changeColor(color) {
   const square = document.getElementById("square");
-  if(square)square.style.backgroundColor = color;
+  square.style.backgroundColor = color;
 }
 /*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
 document.addEventListener("DOMContentLoaded", () => {
   const square = document.getElementById("square");
   if (square) {
-    square.addEventListener('dblclick', () => changecolor('red'));
-    square.addEventListener('mouseover', () => changecolor('green'));
-    square.addEventListener('mouseout', () => changecolor('gray'));
+    square.addEventListener('dblclick', () => changeColor('red'));
+    square.addEventListener('mouseover', () => changeColor('green'));
+    square.addEventListener('mouseout', () => changeColor('gray'));
     square.addEventListener('click', () => changeColor('#8174FA'));
   }
 });
 
+/*function changeColor is defined */
+function changecolor(color) {
+    square.style.backgroundColor = color;
+}
 /* updates DOM content dynamically, delaying javascript until styles load */
 window.onload = function () {
   const page = window.location.pathname;
@@ -158,9 +162,9 @@ window.onload = function () {
     if (
       page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
       {
-      square.addEventListener('dblclick', () => changecolor('red'));
-      square.addEventListener('mouseover', () => changecolor('green'));
-      square.addEventListener('mouseout', () => changecolor('gray'));
+      square.addEventListener('dblclick', () => changeColor('red'));
+      square.addEventListener('mouseover', () => changeColor('green'));
+      square.addEventListener('mouseout', () => changeColor('gray'));
       square.addEventListener('click', () => changeColor('#8174FA'));
     }
   }
