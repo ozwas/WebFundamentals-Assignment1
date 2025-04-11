@@ -532,6 +532,7 @@ body#body4 {
   margin-right: 10px;
   border-radius: 10%;
   border-right: 5px solid red;
+  color: black;
 }
 
 /*style for interactive element */
