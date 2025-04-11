@@ -147,16 +147,16 @@ window.onload = function () {
 
   if (square && words) {
     if ( /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
-      page.includes("/flatland/flatland8.html") || page.includes("week4.html")) {
+      page.includes("/flatland/flatland8.html") || page.includes("/flatland/flatland8") || page.includes("week4") ||page.includes("week4.html")) {
       showGreetingThenBuzz(words); 
-    } else if (page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html")) {
+    } else if (page.includes("/flatland/flatland6.html") page.includes("/flatland/flatland6") || page.includes("/flatland/flatland7") || page.includes("/flatland/flatland7.html")) {
       /* for flatland 6 and 7 only the greeting is displayed */
       words.innerHTML = "Welcome to Flatland.<br>I am Square.";
     }
 
     /* color event listeners for interaction with square shape - changing colors depending on actions */
     if (
-      page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
+      page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland6") || page.includes("/flatland/flatland7.html") page.includes("/flatland/flatland7") || page.includes("/flatland/flatland8") || page.includes("/flatland/flatland8.html") || page.includes("week4") || page.includes("week4.html")) 
       {
       square.addEventListener('dblclick', () => changeColor('red'));
       square.addEventListener('mouseover', () => changeColor('green'));
