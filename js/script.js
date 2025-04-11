@@ -123,19 +123,18 @@ function makeGray() {
   const square = document.getElementById("square");
   square.style.backgroundColor = 'gray';
 }
-/* parameterised function used in step 4, to change square's color when given a value/color */ 
+/* parameterised function used in step 4, to change square's colour when given a value/colour */ 
 function changeColor(color) {
   const square = document.getElementById("square");
   if(square)square.style.backgroundColor = color;
-}
 }
 /*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
 document.addEventListener("DOMContentLoaded", () => {
   const square = document.getElementById("square");
   if (square) {
-    square.addEventListener('dblclick', () => changecolor('red'));
-    square.addEventListener('mouseover', () => changecolor('green'));
-    square.addEventListener('mouseout', () => changecolor('gray'));
+    square.addEventListener('dblclick', () => changeColour('red'));
+    square.addEventListener('mouseover', () => changeColour('green'));
+    square.addEventListener('mouseout', () => changeColour('gray'));
     square.addEventListener('click', () => changeColor('#8174FA'));
   }
 });
@@ -159,9 +158,9 @@ window.onload = function () {
     if (
       page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
       {
-      square.addEventListener('dblclick', () => changecolor('red'));
-      square.addEventListener('mouseover', () => changecolor('green'));
-      square.addEventListener('mouseout', () => changecolor('gray'));
+      square.addEventListener('dblclick', () => changeColour('red'));
+      square.addEventListener('mouseover', () => changeColour('green'));
+      square.addEventListener('mouseout', () => changeColour('gray'));
       square.addEventListener('click', () => changeColor('#8174FA'));
     }
   }
@@ -179,9 +178,6 @@ function createBuzzwordPhrase() {
 
   return buzz[idx_buz] + " " + action[idx_act] + " " + outcome[idx_out];
 }
-
-console.log("Buzzword function triggered");
-
 /* RSS Reader */
 /* Cache to store previously fetched feeds */
 const feedCache = {};
