@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Responsive Feature Page</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Button to Scroll up, to the top of the page-->
   <button class="scroll-up">
     <i class="arrow-up"></i>
   </button>
 
   <header class="header">
+    <!--navigation bar with logo to access other webpages-->
     <nav>
-      <a href="index.html" class="logo">HomePage</a>
+      <span class="logo">Oza-Kine's Portfolio</span>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="week2.html">Week 2</a></li>
         <li><a href="week3.html">Week 3</a></li>
         <li><a href="week4.html">Week 4</a></li>
@@ -23,13 +26,14 @@
     </nav>
   </header>
   
+  <!--hero section with animated background showing a constantly moving gradient background-->
   <section class="hero">
     <div class="animated-bg"></div>
     <div class="hero-content">
         <div>
-            <h1 class="hero-headings">Welcome to the Future</h1>
-            <p class="hero-headings">Discover innovative solutions that transform the way you interact with technology. Elevate your digital experience with our cutting-edge platform.</p>
-            <div class="hero-button-container">
+            <h1 class="hero-headings">Welcome to my Web Portfolio</h1>
+            <p class="hero-headings"> This will showcase various web projects, combining my knowledge of HTML, CSS, and Javascript with AI-assisted development techniques. As a visualisation of my progress with web development, various core web design principles and interactive features have been utilized, whilst ensuring responsiveness and accessibility.</p>
+            <div class="hero-button-container">     <!--links to other sections on the same page itself-->
               <a href="#about" class="hero-button">About Me</a>
               <a href="#projects" class="hero-button">My Projects</a>
               <a href="#contact" class="hero-button">Contact Us</a>
@@ -39,57 +43,76 @@
   </section>
 
   <main>
+    <!--About Me section with a link to an external website (university webpage)-->
     <section id="about" class="about">
       <div class="introduction">
         <h1>About Me</h1>
         <p>My name is Oza-Kine Wong Ah Sui and I am currently a Business Information Systems 
-        student at <a href="https://curtinmauritius.ac.mu/">Curtin Mauritius</a>. 
+        student at <a href="https://curtinmauritius.ac.mu/">Curtin Mauritius</a>. Through the hands-on projects, accessible below, I have deepened my understanding, knowledge and experience in web development, specifically, HTML, CSS, and Javascript. I aspire to develop more complex, fun and interactive webpages, to further improve my technical skills and gain more experience.
         </p>
       </div>
+      <!--Skills section with small icons next to each listed skill-->
       <div class="about-container">
         <div class="about-column">
           <h2>Skills</h2>
           <ul>
-            <li><img src="https://cdn-icons-png.freepik.com/256/9419/9419461.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Project Management Icon" class="item-icon">Project Management</li>
-            <li><img src="https://cdn-icons-png.freepik.com/256/8123/8123689.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Time Management Icon" class="item-icon">Time Management</li>
-            <li><img src="https://cdn-icons-png.freepik.com/128/7095/7095973.png" alt="Critical Thinking Icon" class="item-icon">Critical Thinking</li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/9419/9419461.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Project Management Icon" class="item-icon">Project Management</li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/8123/8123689.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Time Management Icon" class="item-icon">Time Management</li>
+            <li><img src="https://cdn-icons-png.freepik.com/128/7095/7095973.png" alt="Critical Thinking Icon" class="item-icon">
+              Critical Thinking</li>
           </ul>
         </div>
         
+        <!--Interests section, similar to above, uses unordered list-->
         <div class="about-column">
           <h2>Interests</h2>
           <ul>
-            <li><img src="https://cdn-icons-png.freepik.com/256/1447/1447166.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Muffin Icon" class="item-icon">Baking<img src="https://cdn-icons-png.freepik.com/256/2917/2917633.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Baking Icon" class="item-icon"></li>
-            <li><img src="https://cdn-icons-png.freepik.com/256/4134/4134452.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Japanese Sakura Drink Icon" class="item-icon">Learning Japanese<img src="https://cdn-icons-png.freepik.com/256/2755/2755509.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Learning Japanese Icon" class="item-icon"></li>
-            <li><img src="https://cdn-icons-png.freepik.com/256/4999/4999076.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Watching Movie with popcorn and drink Icon" class="item-icon">Movies<img src="https://cdn-icons-png.freepik.com/256/7727/7727545.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Movie Clapperboard Icon" class="item-icon"></li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/1447/1447166.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Muffin Icon" class="item-icon">Baking
+              <img src="https://cdn-icons-png.freepik.com/256/2917/2917633.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Baking Icon" class="item-icon"></li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/4134/4134452.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Japanese Sakura Drink Icon" class="item-icon">Learning Japanese
+              <img src="https://cdn-icons-png.freepik.com/256/2755/2755509.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Learning Japanese Icon" class="item-icon"></li>
+            <li><img src="https://cdn-icons-png.freepik.com/256/4999/4999076.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Watching Movie with popcorn and drink Icon" class="item-icon">Movies
+              <img src="https://cdn-icons-png.freepik.com/256/7727/7727545.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" 
+              alt="Movie Clapperboard Icon" class="item-icon"></li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!--break in webpage-->
     <hr class="rounded">
+     <!--Projects section with short descriptions of each project and links to each week project-->
     <section id="projects" class="Projects">
       <h2>My Projects</h2>
       <div class="grid-container">
-        <div class="grid-item">
+        <div class="grid-item"> <!--takes each project as an item-->
           <h3><a href="week2.html">Week 2: Basic Webpage</a></h3>
-          <p>Learn how to build layouts that adapt seamlessly to any device.</p>
+          <p>A responsive feature page about Japanese Food, emphasizing the use of basic HTML and CSS, such as modern layout techniques.</p>
         </div>
         <div class="grid-item">
           <h3><a href="week3.html">Week 3: Rock Paper Scissors Game</a></h3>
-          <p>Build a navigation bar that reflows gracefully on smaller screens.</p>
+          <p>A game against the computer with a dynamic scoreboard to track wins, losses and ties. Click on the Reset button to reset the scoreboard back to 0, and start a new game session!</p>
         </div>
         <div class="grid-item">
           <h3><a href="week4.html">Week 4: Flatland Business Advisor</a></h3>
-          <p>Organise your content using powerful grid-based designs.</p>
+          <p>An interactive square with a dynamic buzz phrase generator, emphasizing DOM Manipulation. Links to all the steps to create the project are available. Click on the square and see what happens! </p>
         </div>
         <div class="grid-item">
           <h3><a href="week3.html">Week 5: RSS Reader</a></h3>
-          <p>Organise your content using powerful grid-based designs.</p>
+          <p>A dynamic dashboard to display BBC World News and New York Times World News RSS Feeds with article titles and descriptions, among other elements. </p>
         </div>
       </div>
     </section>
+        <!--page break-->
     <hr class="rounded">
+        <!--Contact us section-->
     <section id="contact" class="contact">
       <h2>Contact Us</h2>
       <p>For more information, please contact <a href="mailto:oza-kine.wongahsui@student.curtin.edu.au">oza-kine.wongahsui@student.curtin.edu.au</a>.</p>
@@ -98,6 +121,6 @@
   <footer>
     <p>&copy; 2025 Oza-Kine Wong Ah Sui</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
