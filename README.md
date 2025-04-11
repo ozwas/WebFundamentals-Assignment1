@@ -1,1 +1,3 @@
-# WebFundamentals-Assignment1
+# WebFundamentals-Assignment1 
+Oza-Kine Wong Ah Sui | 21848809
+This web porfolio is a multi-page site developed with the integration of web development fundamentals and modern AI-assisted development techniques. The web portfolio includes a home page, and four project pages. The basic webpage project is a responsive feature page about Japanese food, showcasing the use of basic HTML and CSS. The rock, paper, scissors game project includes a dynamic scoreboard and reset button, integrating game logic through the application of simple JavaScript. The flatland business advisor project depicts an interactive square and dynamic buzz phrase generator, demonstrating DOM manipulation. Lastly, the RSS reader involves a dynamic dashboard with two RSS feeds: BBC World News and New York Times World News, displaying the article titles, descriptions, date published and name of author.
