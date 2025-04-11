@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Landing Page</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <button class="scroll-up">
@@ -12,9 +12,10 @@
   </button>
 
   <header class="header">
-    <nav class="nav">
-      <a href="index.html" class="logo">HomePage</a>
+    <nav class="nav"> <!--Navigation Bar-->
+      <span class="logo">Oza-Kine's Portfolio</span>
       <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
         <li><a href="week2.html">Week 2</a></li>
         <li><a href="week3.html">Week 3</a></li>
         <li><a href="week4.html">Week 4</a></li>
@@ -22,82 +23,140 @@
       </ul>
     </nav>
 
-    <section class="hero2">
+    <section class="hero2"> <!--hero section-->
         <div class="hero-content">
             <div>
-                <h1 class="hero-headings2">Welcome to the Future</h1>
-                <p class="hero-headings2">Discover innovative solutions that transform the way you interact with technology. Elevate your digital experience with our cutting-edge platform.</p>
+                <h1 class="hero-headings2">Japanese Food</h1>
+                <p class="hero-headings2">Globally known and loved for their sushi, ramen and gyozas, Japan's diverse cuisine is definitely worth further exploring! Take this chance to get a basic overview of what makes up Japanese cuisine from unknown dishes to the staple ingredients! </p>
             </div>
-            <nav class="subnav-button-container">
-                <a href="#about" class="subnav-button">About Me</a>
-                <a href="#projects" class="subnav-button">My Projects</a>
-                <a href="#contact" class="subnav-button">Contact Us</a>
+            <nav class="subnav-button-container"> <!--links to sections in page-->
+              <a href="#dishes" class="subnav-button">Japanese Food</a>
+              <a href="#essentials" class="subnav-button">Kitchen Staples and Cooking Techniques</a>
+              <a href="#favorites" class="subnav-button">My Favorites</a>
             </nav>
         </div>
     </section>
-
-
   </header>
+  <div class="pagebreak"></div>
   <main>
-    <section id="about" class="about">
-      <div class="introduction">
-        <h1>About Me</h1>
-        <p>My name is Oza-Kine Wong Ah Sui and I am currently a Business Information Systems 
-        student at <a href="https://curtinmauritius.ac.mu/">Curtin Mauritius</a>. 
-        </p>
+    <section id="dishes" class="food"> 
+      <h1>Japanese Dishes</h1> <!--Japanese dishes section, pictures of food and short descriptions of each food -->
+      <div class="food-gallery">
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8185/salmon-nigiri-%20sushi?optimizer=image" alt="Sushi Image">
+          <h3>Sushi</h3>
+          <p>A combination of rice seasoned with rice vinegar and various ingredients, ranging from raw fish and shrimp to eggs and vegetables. As opposed to the rest of the world, Japanese people generally don't eat sushi with soy sauce!</p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8168/okonomiyaki?optimizer=image" alt="Okonomiyaki Image">
+          <h3>Okonomiyaki</h3>
+          <p>A savory Japanese pancake made from a batter of egg, flour and cabbage, with the addition of various ingredients according to regional tastes.</p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8169/yakitori?optimizer=image" alt="Yakitori image">
+          <h3>Yakitori</h3>
+          <p>These delicious grilled chicken skewers are a must! They work well as a small snack or a light meal with beers, all while being quite affordable.</p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8179/soba?optimizer=image" alt="Soba image">
+          <h3>Soba</h3>
+          <p>An old but classic dish! Buckwheat noodles that are refreshing, healthy and hold far more nutritional benefits than other noodles!</p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8180/sukiyaki?optimizer=image" alt="Sukiyaki image">
+          <h3>Sukiyaki</h3>
+          <p>A Japanese hot pot dish, with a light and sweet flavour. Previously eaten mostly for celebrations, it is now also enjoyed as a typical dish.</p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8181/unagi?optimizer=image" alt="Unagi and rice image">
+          <h3>Unagi</h3>
+          <p>A scrumptious dish of grilled Japanese eel, it is generally served in a rectangular box with a serving of rice.</p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/8175/natto?optimizer=image" alt="Natto image">
+          <h3>Natto</h3>
+          <p>A dish that you'll either hate or love! Despite its pungent smell, it is a healthy meal. </p>
+        </div>
+        <div class="food-item">
+          <img src="https://byfood.b-cdn.net/api/public/assets/18788/content?optimizer=image" alt="Gyoza image">
+          <h3>Gyoza</h3>
+          <p>Pan fried dumplings which differ from Chinese dumplings with their typical pork, cabbage and mushroom fillings.</p>
+        </div>
       </div>
-      <div class="about-container">
-        <div class="about-column">
-          <h2>Skills</h2>
+    </section>
+
+    <hr class="rounded">
+    <section id="essentials" class="essentials">
+      <h2>Japanese Kitchen Staples</h2> <!--Kitchen essentials/staples list -->
+      <div class="essentials-container">
+        <div class="essentials-column">
+          <h3>Staple Ingredients</h3>
           <ul>
-            <li><img src="https://cdn-icons-png.freepik.com/256/9419/9419461.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Project Management Icon" class="item-icon">Project Management</li>
-            <li><img src="https://cdn-icons-png.freepik.com/256/8123/8123689.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Time Management Icon" class="item-icon">Time Management</li>
-            <li><img src="https://cdn-icons-png.freepik.com/128/7095/7095973.png" alt="Critical Thinking Icon" class="item-icon">Critical Thinking</li>
+            <li><strong>Rice</strong> - Short-grain Japonica rice is most commonly used</li>
+            <li><strong>Soy Sauce</strong> - Used for seasoning, it adds a deep umami flavour</li>
+            <li><strong>Miso Paste</strong> - Fermented soybeans which add depth to soups and marinades</li>
+            <li><strong>Dashi</strong> - A broth fullof umami, used as base for soups and dishes</li>
+            <li><strong>Mirin</strong> - Sweet rice wine with a little sweetness, used in sauces and marinades</li>
+            <li><strong>Sake</strong> - Alcoholic beverage vital in enhancing flavours and tenderizing meat.</li>
+            <li><strong>Rice Vinegar</strong> - Mild vinegar essential for sushi rice</li>
           </ul>
         </div>
         
-        <div class="about-column">
-          <h2>Interests</h2>
-          <ol>
-            <li><img src="https://cdn-icons-png.freepik.com/256/1447/1447166.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Muffin Icon" class="item-icon">Baking<img src="https://cdn-icons-png.freepik.com/256/2917/2917633.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Baking Icon" class="item-icon"></li>
-            <li><img src="https://cdn-icons-png.freepik.com/256/4134/4134452.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Japanese Sakura Drink Icon" class="item-icon">Learning Japanese<img src="https://cdn-icons-png.freepik.com/256/2755/2755509.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Learning Japanese Icon" class="item-icon"></li>
-            <li><img src="https://cdn-icons-png.freepik.com/256/4999/4999076.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Watching Movie with popcorn and drink Icon" class="item-icon">Movies<img src="https://cdn-icons-png.freepik.com/256/7727/7727545.png?ga=GA1.1.1173377899.1744137306&semt=ais_hybrid" alt="Movie Clapperboard Icon" class="item-icon"></li>
-          </ol>
+        <div class="essentials-column">
+          <h3>Cooking Techniques</h3> <!--cooking techniques list-->
+          <ul>
+            <li><strong>Nimono (Simmering)</strong> - Slow cooking of ingredients in a seasoned broth</li>
+            <li><strong>Mushimono (Steaming)</strong> - Used to preserve the natural flavours of delicate ingredients like vegetables and tofu </li>
+            <li><strong>Grilling and Pan-Frying</strong> - Adds a smoky flavour and crispy exterior, balancing taste and texture</li>
+            <li><strong>Sashimi (Raw Preparation)</strong> - Requires high quality ingredients and knife skills for a clean, fresh flavour</li>
+            <li><strong>Tsukemono (Pickling)</strong> - Preserving vegetables in a mixture of vinegar, salt and sugar for a refreshing addition to dishes</li>
+          </ul>
         </div>
       </div>
     </section>
-
+    
     <hr class="rounded">
-    <section id="projects" class="Projects">
-      <h2>My Projects</h2>
-      <div class="grid-container">
-        <div class="grid-item">
-          <h3><a href="week2.html">Week 2: Basic Webpage</a></h3>
-          <p>Learn how to build layouts that adapt seamlessly to any device.</p>
+    <section id="favorites" class="favorites"> <!--personal favourite japanese dishes section -->
+      <h2>My Personal Favorites</h2>
+      <div class="ranking">
+        <div class="rank-item">
+          <span class="rank-number">1</span>
+          <div>
+            <h3>Ramen</h3>
+          </div>
         </div>
-        <div class="grid-item">
-          <h3><a href="week3.html">Week 3: Rock Paper Scissors Game</a></h3>
-          <p>Build a navigation bar that reflows gracefully on smaller screens.</p>
+        <div class="rank-item">
+          <span class="rank-number">2</span>
+          <div>
+            <h3>Sushi</h3>
+          </div>
         </div>
-        <div class="grid-item">
-          <h3><a href="week4.html">Week 4: Flatland Business Advisor</a></h3>
-          <p>Organise your content using powerful grid-based designs.</p>
+        <div class="rank-item">
+          <span class="rank-number">3</span>
+          <div>
+            <h3>Unagi</h3>
+          </div>
         </div>
-        <div class="grid-item">
-          <h3><a href="week3.html">Week 5: RSS Reader</a></h3>
-          <p>Organise your content using powerful grid-based designs.</p>
+        <div class="rank-item">
+          <span class="rank-number">4</span>
+          <div>
+            <h3>Takoyaki</h3>
+          </div>
+        </div>
+        <div class="rank-item">
+          <span class="rank-number">5</span>
+          <div>
+            <h3>Karaage/Japanese Fried Chicken</h3>
+          </div>
         </div>
       </div>
     </section>
+    
     <hr class="rounded">
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <p>For more information, please contact <a href="mailto:oza-kine.wongahsui@student.curtin.edu.au">oza-kine.wongahsui@student.curtin.edu.au</a>.</p>
-    </section>
   </main>
   <footer>
     <p>&copy; 2025 Oza-Kine Wong Ah Sui</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
