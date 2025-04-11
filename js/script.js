@@ -142,8 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
 /* updates DOM content dynamically, delaying javascript until styles load */
 window.onload = function () {
   const page = window.location.pathname;
-  const square = document.getElementById('square');
-  const words = document.getElementById('words');
+  const square = document.getElementById("square");
+  const words = document.getElementById("words");
 
   if (square && words) {
     if ( /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
