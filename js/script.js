@@ -138,11 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     square.addEventListener('click', () => changeColor('#8174FA'));
   }
 });
-/*function changeColor is defined */
-function changecolor(color) {
-  const square = document.getElementById("square");
-  if (square) square.style.backgroundColor = color;
-}
+
 /* updates DOM content dynamically, delaying javascript until styles load */
 window.onload = function () {
   const page = window.location.pathname;
