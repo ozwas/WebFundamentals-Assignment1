@@ -1,3 +1,4 @@
+/* Oza-Kine Wong Ah Sui 21848809 */
 /* Event listener to scroll to the top of the page when the user clicks on the scroll up button */
 document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".scroll-up");
