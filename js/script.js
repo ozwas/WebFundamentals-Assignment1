@@ -128,17 +128,6 @@ function changeColor(color) {
   const square = document.getElementById("square");
   square.style.backgroundColor = color;
 }
-/*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
-document.addEventListener("DOMContentLoaded", () => {
-  const square = document.getElementById("square");
-  if (square) {
-    square.addEventListener('dblclick', () => changeColour('red'));
-    square.addEventListener('mouseover', () => changeColour('green'));
-    square.addEventListener('mouseout', () => changeColour('gray'));
-    square.addEventListener('click', () => changeColor('#8174FA'));
-  }
-});
-
 /*function changeColor is defined */
 function changeColour(colour) {
     square.style.backgroundColor = colour;
