@@ -123,7 +123,7 @@ function makeGray() {
   const square = document.getElementById("square");
   square.style.backgroundColor = 'gray';
 }
-/* parameterised function used in step 4, to change square's colour when given a value/colour */ 
+/* parameterised function used in step 4, to change square's color when given a value/color */ 
 function changeColor(color) {
   const square = document.getElementById("square");
   square.style.backgroundColor = color;
@@ -132,16 +132,16 @@ function changeColor(color) {
 document.addEventListener("DOMContentLoaded", () => {
   const square = document.getElementById("square");
   if (square) {
-    square.addEventListener('dblclick', () => changeColour('red'));
-    square.addEventListener('mouseover', () => changeColour('green'));
-    square.addEventListener('mouseout', () => changeColour('gray'));
+    square.addEventListener('dblclick', () => changecolor('red'));
+    square.addEventListener('mouseover', () => changecolor('green'));
+    square.addEventListener('mouseout', () => changecolor('gray'));
     square.addEventListener('click', () => changeColor('#8174FA'));
   }
 });
 /*function changeColor is defined */
-function changeColour(colour) {
+function changecolor(color) {
   const square = document.getElementById("square");
-  if (square) square.style.backgroundColor = colour;
+  if (square) square.style.backgroundColor = color;
 }
 /* updates DOM content dynamically, delaying javascript until styles load */
 window.onload = function () {
@@ -162,9 +162,9 @@ window.onload = function () {
     if (
       page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
       {
-      square.addEventListener('dblclick', () => changeColour('red'));
-      square.addEventListener('mouseover', () => changeColour('green'));
-      square.addEventListener('mouseout', () => changeColour('gray'));
+      square.addEventListener('dblclick', () => changecolor('red'));
+      square.addEventListener('mouseover', () => changecolor('green'));
+      square.addEventListener('mouseout', () => changecolor('gray'));
       square.addEventListener('click', () => changeColor('#8174FA'));
     }
   }
