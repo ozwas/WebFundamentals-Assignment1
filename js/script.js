@@ -93,60 +93,23 @@ function launchConfetti() {  /*function to launch confetti */
 }
 
 /* Flatland */
-function showGreetingThenBuzz(wordsElement) {    
-  if (!wordsElement) return;
-  
-  /* Show greeting */
+function showGreetingThenBuzz(wordsElement) {
+  /* shows greeting */
   wordsElement.innerHTML = "Welcome to Flatland.<br>I am Square.";
-  
-  /* For flatland8 and week4, set up buzzword generator after greeting disappears */
-  const page = window.location.pathname;
-  const isFlatland8 = page.includes("/flatland/flatland8.html");
-  const isWeek4 = page.includes("week4.html");
   /*greeting disappears after a short time and the buzzword generator is set up after */
-  if (isFlatland8 || isWeek4) {
-    setTimeout(() => {
-      wordsElement.innerHTML = '';
-      const square = document.getElementById('square');     /* each time the user clicks on the square, a new buzzword phrase is shown */
-      if (square) {
-        square.addEventListener('click', () => {
-          const phrase = createBuzzwordPhrase();
-          wordsElement.innerHTML = phrase;
-        });
-      }
-    }, 2000);  /*2s - duration of greeting being displayed on screen */
-  }
+  setTimeout(() => {
+    wordsElement.innerHTML = '';
+    /* each time the user clicks on the square, a new buzzword phrase is shown */
+    const square = document.getElementById('square');
+    if (square) {
+      square.addEventListener('click', () => {
+        const phrase = createBuzzwordPhrase();
+        wordsElement.innerHTML = phrase;
+      });
+    }
+  }, 2000); /*2s - duration of greeting being displayed on screen */
 }
 
-/* Updates DOM content dynamically, delaying JavaScript until styles load */
-window.onload = function () {
-  const page = window.location.pathname;
-  const square = document.getElementById("square");
-  const words = document.getElementById("words");
-
-  /* Checks if the current page is one of following pages that need this function */
-  const isFlatland6 = page.includes("/flatland/flatland6.html");
-  const isFlatland7 = page.includes("/flatland/flatland7.html");
-  const isFlatland8 = page.includes("/flatland/flatland8.html");
-  const isWeek4 = page.includes("week4.html");
-
-  if (words) {
-    /* Show greeting on flatland6, flatland7, flatland8, and week4 */
-    if (isFlatland6 || isFlatland7 || isFlatland8 || isWeek4) {
-      showGreetingThenBuzz(words);
-    }
-  }
-
-/*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
-  if (square && (isFlatland6 || isFlatland7 || isFlatland8 || isWeek4)) {
-    square.addEventListener('dblclick', () => changeColor('red'));
-    square.addEventListener('mouseover', () => changeColor('green'));
-    square.addEventListener('mouseout', () => changeColor('gray'));
-    square.addEventListener('click', () => changeColor('#8174FA'));
-  }
-};
-
-/* Functions */
 /* individual functions called in step 3 flatland, defined in html */
 function makeRed() {
   const square = document.getElementById("square");
@@ -160,14 +123,51 @@ function makeGray() {
   const square = document.getElementById("square");
   square.style.backgroundColor = 'gray';
 }
-
 /* parameterised function used in step 4, to change square's color when given a value/color */ 
 function changeColor(color) {
   const square = document.getElementById("square");
-  if (square) square.style.backgroundColor = color;
+  if(square)square.style.backgroundColor = color;
 }
-/* randomly generates a buzzword phrase - See https://en.wikipedia.org/wiki/List_of_buzzwords */
+/*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
+document.addEventListener("DOMContentLoaded", () => {
+  const square = document.getElementById("square");
+  if (square) {
+    square.addEventListener('dblclick', () => changecolor('red'));
+    square.addEventListener('mouseover', () => changecolor('green'));
+    square.addEventListener('mouseout', () => changecolor('gray'));
+    square.addEventListener('click', () => changeColor('#8174FA'));
+  }
+});
+
+/* updates DOM content dynamically, delaying javascript until styles load */
+window.onload = function () {
+  const page = window.location.pathname;
+  const square = document.getElementById('square');
+  const words = document.getElementById('words');
+
+  if (square && words) {
+    if ( /*conditional statements to ensure that buzzword generator only works for flatland8 and week4 */
+      page.includes("/flatland/flatland8.html") || page.includes("week4.html")) {
+      showGreetingThenBuzz(words); 
+    } else if (page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html")) {
+      /* for flatland 6 and 7 only the greeting is displayed */
+      words.innerHTML = "Welcome to Flatland.<br>I am Square.";
+    }
+
+    /* color event listeners for interaction with square shape - changing colors depending on actions */
+    if (
+      page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
+      {
+      square.addEventListener('dblclick', () => changecolor('red'));
+      square.addEventListener('mouseover', () => changecolor('green'));
+      square.addEventListener('mouseout', () => changecolor('gray'));
+      square.addEventListener('click', () => changeColor('#8174FA'));
+    }
+  }
+};
+/* randomly generates a buzzword phrase */
 function createBuzzwordPhrase() {
+  /* See https://en.wikipedia.org/wiki/List_of_buzzwords */
   let buzz = ["Paradigm-changing", "Multi-tier", "10,000-foot", "Agile", "Customer", "Win-win"];
   let action = ["empowered", "value-added", "synergy", "creative", "oriented", "focused", "aligned"];
   let outcome = ["process", "deliverable", "solution", "tipping-point", "strategy", "vision"];
@@ -178,7 +178,6 @@ function createBuzzwordPhrase() {
 
   return buzz[idx_buz] + " " + action[idx_act] + " " + outcome[idx_out];
 }
-
 /* RSS Reader */
 /* Cache to store previously fetched feeds */
 const feedCache = {};
