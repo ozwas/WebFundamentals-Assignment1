@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper, Scissors</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="header">
     <!--navigation bar with homepage logo-->
     <nav>
-      <a href="index.html" class="logo">Oza-Kine's Portfolio</a>
+      <span class="logo">Oza-Kine's Portfolio</span>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="week2.html">Week 2</a></li>
@@ -22,8 +22,16 @@
   </header>
     <!--Rock Paper Scissors Section -->
   <main> 
+    <div class="hero3">
+      <div class="hero-content">
+        <div class="hero-headings3">
+          <h1>Rock, Paper or Scissors?</h1>
+          <p>Play against me!</p>
+        </div>
+      </div>
+    </div>
+    <div class="pagebreak"></div>
     <section class="rock-container">     <!--Container or boundary around the game-->
-    <h1>Rock, Paper or Scissors?</h1>
     <p>
     <span class="circle" onclick="play('rock')">R</span>  <!--Circle with letter for user to click on to select their choice-->
     <span class="circle" onclick="play('paper')">P</span>
@@ -47,6 +55,6 @@
   <footer>
     <p>&copy; 2025 Oza-Kine Wong Ah Sui</p>
   </footer>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
