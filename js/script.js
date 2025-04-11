@@ -100,7 +100,7 @@ function showGreetingThenBuzz(wordsElement) {
   setTimeout(() => {
     wordsElement.innerHTML = '';
     /* each time the user clicks on the square, a new buzzword phrase is shown */
-    const square = document.getElementById('square');
+    const square = document.getElementById("square");
     if (square) {
       square.addEventListener('click', () => {
         const phrase = createBuzzwordPhrase();
