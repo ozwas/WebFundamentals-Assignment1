@@ -182,6 +182,9 @@ function createBuzzwordPhrase() {
 
   return buzz[idx_buz] + " " + action[idx_act] + " " + outcome[idx_out];
 }
+
+console.log("Buzzword function triggered");
+
 /* RSS Reader */
 /* Cache to store previously fetched feeds */
 const feedCache = {};
