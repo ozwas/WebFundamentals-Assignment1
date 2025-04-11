@@ -399,7 +399,8 @@ footer {
 
 /* style for favorites ranking */
 .ranking {
-  max-width: 300px;
+  max-width: 600px;
+  max-height: 150px;
   margin: 0 auto;
 }
 
