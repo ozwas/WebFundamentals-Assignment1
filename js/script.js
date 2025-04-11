@@ -123,7 +123,7 @@ function makeGray() {
   const square = document.getElementById("square");
   square.style.backgroundColor = 'gray';
 }
-/* parameterised function used in step 4, to change square's colour when given a value/colour */ 
+/* parameterised function used in step 4, to change square's color when given a value/color */ 
 function changeColor(color) {
   const square = document.getElementById("square");
   if(square)square.style.backgroundColor = color;
@@ -132,9 +132,9 @@ function changeColor(color) {
 document.addEventListener("DOMContentLoaded", () => {
   const square = document.getElementById("square");
   if (square) {
-    square.addEventListener('dblclick', () => changeColour('red'));
-    square.addEventListener('mouseover', () => changeColour('green'));
-    square.addEventListener('mouseout', () => changeColour('gray'));
+    square.addEventListener('dblclick', () => changeColor('red'));
+    square.addEventListener('mouseover', () => changeColor('green'));
+    square.addEventListener('mouseout', () => changeColor('gray'));
     square.addEventListener('click', () => changeColor('#8174FA'));
   }
 });
@@ -158,9 +158,9 @@ window.onload = function () {
     if (
       page.includes("/flatland/flatland6.html") || page.includes("/flatland/flatland7.html") || page.includes("/flatland/flatland8.html") || page.includes("week4.html")) 
       {
-      square.addEventListener('dblclick', () => changeColour('red'));
-      square.addEventListener('mouseover', () => changeColour('green'));
-      square.addEventListener('mouseout', () => changeColour('gray'));
+      square.addEventListener('dblclick', () => changeColor('red'));
+      square.addEventListener('mouseover', () => changeColor('green'));
+      square.addEventListener('mouseout', () => changeColor('gray'));
       square.addEventListener('click', () => changeColor('#8174FA'));
     }
   }
