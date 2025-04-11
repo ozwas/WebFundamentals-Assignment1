@@ -126,7 +126,8 @@ function makeGray() {
 /* parameterised function used in step 4, to change square's color when given a value/color */ 
 function changeColor(color) {
   const square = document.getElementById("square");
-  square.style.backgroundColor = color;
+  if(square)square.style.backgroundColor = color;
+}
 }
 /*sets interactivity through addeventlistener, used in step 5, replacing inline event attributes */
 document.addEventListener("DOMContentLoaded", () => {
